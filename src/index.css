@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #1E293B;
+    background-color: #F8FAFC;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@media print {
+  header, footer, nav, button, .no-print {
+    display: none !important;
+  }
+
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .printable-memo {
+    border: 1px solid #CBD5E1 !important;
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+}
