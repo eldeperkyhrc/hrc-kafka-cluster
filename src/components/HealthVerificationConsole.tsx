@@ -68,14 +68,14 @@ export const HealthVerificationConsole: React.FC = () => {
             <div className="flex items-center justify-between border-b border-slate-800 pb-3 text-slate-400">
               <div className="flex items-center gap-2">
                 <Terminal className="w-4 h-4 text-emerald-400" />
-                <span>bash /opt/hrc-kafka/scripts/verify-cluster.sh --all-hosts</span>
+                <span>bash /opt/jhsam-kafka/scripts/verify-cluster.sh --all-hosts</span>
               </div>
               <span className="text-[11px] text-slate-500">EXIT CODE 0</span>
             </div>
 
             <div className="text-slate-500 py-1">
               ═════════════════════════════════════════════════════════════<br />
-              &nbsp;HRC KAFKA CLUSTER — EXECUTIVE OPERATIONAL VERIFICATION<br />
+              &nbsp;JHSAM KAFKA CLUSTER — EXECUTIVE OPERATIONAL VERIFICATION<br />
               ═════════════════════════════════════════════════════════════
             </div>
 
@@ -126,7 +126,7 @@ export const HealthVerificationConsole: React.FC = () => {
           </div>
 
           <div className="mt-4 pt-3 border-t border-slate-900 text-[11px] text-slate-500 flex justify-between">
-            <span>Report timestamp: 2026-10-14 11:36:18 AST</span>
+            <span>Report timestamp: 2026-10-14 12:21:44 AST</span>
             <span>Cluster Quorum: Synchronized</span>
           </div>
         </div>

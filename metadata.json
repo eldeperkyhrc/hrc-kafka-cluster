@@ -1,6 +1,8 @@
 {
-  "name": "HRC Kafka Cluster — Executive Briefing & Platform Console",
-  "description": "Executive briefing presentation deck, architecture explorer, operational verification, capacity planning, and security roadmap for the HRC Data Management Platform Kafka Cluster.",
+  "name": "JHSAM Kafka Cluster — Executive Briefing & Platform Console",
+  "description": "Executive briefing presentation deck, architecture explorer, operational verification, capacity planning, and security roadmap for the JHSAM Data Management Platform Kafka Cluster.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

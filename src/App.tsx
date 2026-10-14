@@ -86,7 +86,7 @@ export default function App() {
                   </span>
                 </div>
                 <h1 className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight mt-1">
-                  HRC Data Management Platform — Kafka Cluster Executive Briefing
+                  JHSAM Data Management Platform — Kafka Cluster Executive Briefing
                 </h1>
               </div>
 
@@ -296,7 +296,7 @@ export default function App() {
       <footer className="border-t border-slate-200 bg-white py-6 mt-12 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-800">HRC Data Management Platform</span>
+            <span className="font-bold text-slate-800">JHSAM Data Management Platform</span>
             <span>·</span>
             <span>Kafka Cluster Deployment Executive Briefing</span>
           </div>

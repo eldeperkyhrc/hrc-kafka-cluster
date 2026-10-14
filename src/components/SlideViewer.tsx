@@ -38,7 +38,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({
           )}
         </div>
         <div className="text-xs font-mono text-slate-400">
-          HRC Data Management Platform · October 2026
+          JHSAM Data Management Platform · October 2026
         </div>
       </div>
 
@@ -109,7 +109,7 @@ const Slide1Content: React.FC<{ onNavigate?: (v: any) => void }> = ({ onNavigate
 
       <div className="space-y-3">
         <h2 className="text-xl md:text-2xl font-bold text-slate-900 leading-snug">
-          Real-time Event Streaming Backbone for 10 Business Applications & ODS Analytics
+          Real-time Event Streaming Backbone for 10 Business Systems & ODS Analytics
         </h2>
         <p className="text-sm text-slate-600 leading-relaxed">
           Comprehensive executive briefing covering cluster architecture, live health verification, 
@@ -148,7 +148,7 @@ const Slide1Content: React.FC<{ onNavigate?: (v: any) => void }> = ({ onNavigate
       <div className="w-full rounded-xl overflow-hidden border border-slate-200 shadow-md bg-slate-900">
         <img 
           src="/src/assets/images/kafka_enterprise_mesh_1792003032458.jpg" 
-          alt="HRC Kafka Cluster Enterprise Mesh" 
+          alt="JHSAM Kafka Cluster Enterprise Mesh" 
           className="w-full h-56 object-cover"
         />
         <div className="p-3 bg-slate-900 text-slate-300 text-xs flex items-center justify-between">
@@ -310,13 +310,13 @@ const Slide3Content: React.FC<{ onNavigate?: (v: any) => void }> = () => (
 
         {/* Visual flow */}
         <div className="p-3.5 bg-slate-900 text-white rounded-lg flex items-center justify-between text-xs font-mono">
-          <span className="text-slate-300">10 Source DBs</span>
+          <span className="text-slate-300">10 Source Systems</span>
           <ArrowRight className="w-4 h-4 text-emerald-400" />
           <span className="text-amber-300">Kafka 3-Node Cluster</span>
           <ArrowRight className="w-4 h-4 text-emerald-400" />
           <span className="text-cyan-300">PROD_ODS</span>
           <ArrowRight className="w-4 h-4 text-emerald-400" />
-          <span className="text-emerald-400 font-bold">DWH / SDAIA</span>
+          <span className="text-emerald-400 font-bold">DWH / Analytics</span>
         </div>
       </div>
     </div>
@@ -331,8 +331,8 @@ const Slide4Content: React.FC<{ onNavigate?: (v: any) => void }> = ({ onNavigate
           End-to-End Enterprise Architecture
         </h3>
         <p className="text-xs text-slate-600 leading-relaxed">
-          The HRC Data Platform bridges legacy relational silos and modern analytical stores. 
-          Ten operational databases continuously stream table-level transaction logs through Debezium connectors 
+          The JHSAM Data Platform bridges relational silos and modern analytical stores. 
+          Ten operational source databases continuously stream table-level transaction logs through Debezium connectors 
           into redundant KRaft Kafka brokers, which sink data into the unified <span className="font-mono font-semibold text-slate-800">PROD_ODS</span> repository.
         </p>
 
@@ -349,7 +349,7 @@ const Slide4Content: React.FC<{ onNavigate?: (v: any) => void }> = ({ onNavigate
             <tbody className="divide-y divide-slate-200 text-slate-600 font-mono">
               <tr>
                 <td className="p-2.5 font-sans font-medium text-slate-900">CDC Sources</td>
-                <td className="p-2.5 font-bold text-slate-900">10 Databases</td>
+                <td className="p-2.5 font-bold text-slate-900">10 Generic Systems</td>
                 <td className="p-2.5 font-sans">Oracle, SQL Server, Postgres, MySQL</td>
               </tr>
               <tr>
@@ -604,7 +604,7 @@ const Slide8Content: React.FC<{ onNavigate?: (v: any) => void }> = ({ onNavigate
       {/* Terminal View */}
       <div className="md:col-span-7 bg-slate-950 text-slate-200 font-mono text-xs rounded-xl p-4 shadow-md border border-slate-800 space-y-1.5">
         <div className="text-slate-400 pb-2 border-b border-slate-800 flex justify-between">
-          <span>HRC Kafka Cluster — Verification CLI</span>
+          <span>JHSAM Kafka Cluster — Verification CLI</span>
           <span className="text-emerald-400">verify-cluster.sh</span>
         </div>
         <div className="text-slate-300 pt-1">[1] Containers on host: 5/5 <span className="text-emerald-400 font-bold">✓ PASS</span></div>
@@ -1087,7 +1087,7 @@ const Slide15Content: React.FC<{ onNavigate?: (v: any) => void }> = () => (
         <div className="p-3.5 bg-blue-50/70 border border-blue-200 rounded-xl text-xs space-y-1">
           <div className="font-bold text-[#1F3A5F]">Real-Time Executive Intelligence</div>
           <p className="text-slate-600 text-[11px]">
-            Leadership views live today numbers on SDAIA and DWH dashboards rather than 24-hour delayed snapshots.
+            Leadership views live today numbers on reporting dashboards rather than 24-hour delayed snapshots.
           </p>
         </div>
       </div>

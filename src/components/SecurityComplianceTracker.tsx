@@ -26,13 +26,13 @@ export const SecurityComplianceTracker: React.FC = () => {
       statusClass: 'text-red-700 bg-red-50 border-red-200'
     },
     financial: {
-      label: 'Core Financials, General Ledger & Invoicing (AZKA)',
+      label: 'Core Financials, General Ledger & Invoicing (System 07)',
       allowed: false,
       reason: 'BLOCKED: Plaintext database credentials in config files violate SAMA CSF and NCA ECC-1. Requires Phase 1 TLS + Phase 2 HashiCorp Vault.',
       statusClass: 'text-red-700 bg-red-50 border-red-200'
     },
     regulated: {
-      label: 'SDAIA / National Regulatory Compliance Datasets',
+      label: 'National Regulatory & Statutory Compliance Datasets',
       allowed: false,
       reason: 'BLOCKED: Lacks immutable forensic audit trail and per-topic zero-trust ACLs. Requires completion of all 4 Hardening Phases.',
       statusClass: 'text-red-700 bg-red-50 border-red-200'

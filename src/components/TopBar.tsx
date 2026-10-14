@@ -21,14 +21,14 @@ export const TopBar: React.FC<TopBarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
         {/* Zone 1: Single text element wordmark */}
         <div className="flex items-center gap-3 shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-[#1F3A5F] flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-xs">
-            HRC
+          <div className="px-2 h-8 rounded-lg bg-[#1F3A5F] flex items-center justify-center text-white font-bold text-xs tracking-wider shadow-xs">
+            JHSAM
           </div>
           <button
             onClick={() => onSelectView('deck')}
             className="text-base sm:text-lg font-bold tracking-tight text-slate-900 whitespace-nowrap hover:text-[#1F3A5F] transition-colors text-left"
           >
-            HRC Kafka Platform
+            JHSAM Kafka Platform
           </button>
         </div>
 

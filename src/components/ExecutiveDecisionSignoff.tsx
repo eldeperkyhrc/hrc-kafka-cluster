@@ -15,7 +15,7 @@ export const ExecutiveDecisionSignoff: React.FC<ExecutiveDecisionSignoffProps> =
 }) => {
   const [signerName, setSignerName] = useState<string>('H.E. Executive Sponsor');
   const [signerTitle, setSignerTitle] = useState<string>('Chair, Data Governance Steering Committee');
-  const [committeeName, setCommitteeName] = useState<string>('HRC Enterprise Technology Steering Committee');
+  const [committeeName, setCommitteeName] = useState<string>('JHSAM Enterprise Technology Steering Committee');
   const [memoCopied, setMemoCopied] = useState<boolean>(false);
 
   const decisions = [
@@ -58,7 +58,7 @@ export const ExecutiveDecisionSignoff: React.FC<ExecutiveDecisionSignoffProps> =
 
   const handleCopyMemo = () => {
     const text = `
-HRC DATA MANAGEMENT PLATFORM — EXECUTIVE BRIEFING DECISION MEMORANDUM
+JHSAM DATA MANAGEMENT PLATFORM — EXECUTIVE BRIEFING DECISION MEMORANDUM
 Date: October 14, 2026
 Presented To: ${committeeName}
 Executive Signatory: ${signerName} (${signerTitle})
@@ -209,11 +209,11 @@ PLATFORM BASELINE:
           <div className="border-b border-slate-200 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <div className="text-sm font-bold text-slate-900">MEMORANDUM FOR RECORD</div>
-              <div className="text-[11px] text-slate-500">REF: HRC-KAFKA-DECISION-2026-10-14</div>
+              <div className="text-[11px] text-slate-500">REF: JHSAM-KAFKA-DECISION-2026-10-14</div>
             </div>
             <div className="text-right">
               <div className="font-bold text-slate-900">CLASSIFICATION: INTERNAL – CONFIDENTIAL</div>
-              <div className="text-[11px] text-slate-500">HRC Data Management Platform</div>
+              <div className="text-[11px] text-slate-500">JHSAM Data Management Platform</div>
             </div>
           </div>
 

@@ -30,6 +30,7 @@ export interface NodeServer {
 export interface CdcSource {
   id: string;
   name: string;
+  genericCode: string;
   dbType: 'Oracle' | 'SQL Server' | 'PostgreSQL' | 'MySQL' | 'Oracle EBS';
   businessDomain: string;
   connector: string;
@@ -75,11 +76,11 @@ export const SLIDES_DATA: SlideData[] = [
     id: 1,
     slug: 'title',
     number: 1,
-    title: 'HRC Data Management Platform',
+    title: 'JHSAM Data Management Platform',
     subtitle: 'Kafka Cluster Deployment — Executive Briefing',
     category: 'Overview',
     isExecShortDeck: true,
-    speakerNotes: 'Welcome. Today I will walk you through the deployment of the HRC Kafka Cluster — what it is, what is live today, and what we recommend next. This is a 20-minute briefing with 5 minutes for questions.',
+    speakerNotes: 'Welcome. Today I will walk you through the deployment of the JHSAM Kafka Cluster — what it is, what is live today, and what we recommend next. This is a 20-minute briefing with 5 minutes for questions.',
     keyTakeaway: 'The foundational enterprise streaming backbone is live and operational as of October 2026.'
   },
   {
@@ -112,7 +113,7 @@ export const SLIDES_DATA: SlideData[] = [
     subtitle: '10 Pre-Configured CDC Sources, 3-Node KRaft Quorum, PROD_ODS Target',
     category: 'Architecture',
     isExecShortDeck: true,
-    speakerNotes: 'This is the complete picture. Ten business systems feed into a 3-node cluster. The cluster is fully redundant: any one broker can fail without data loss. Downstream, everything lands in the Operational Data Store where analytics and reporting pick it up.',
+    speakerNotes: 'This is the complete picture. Ten generic business source systems feed into a 3-node cluster. The cluster is fully redundant: any one broker can fail without data loss. Downstream, everything lands in the Operational Data Store where analytics and reporting pick it up.',
     keyTakeaway: 'End-to-end unified architecture: 10 source DBs, 3 KRaft brokers with 3x replication, landing in PROD_ODS.'
   },
   {
@@ -134,7 +135,7 @@ export const SLIDES_DATA: SlideData[] = [
     subtitle: 'From Database Commit to Analytical Availability in ~100 Milliseconds',
     category: 'Architecture',
     isExecShortDeck: false,
-    speakerNotes: 'Here is what happens when someone in CVM updates a customer record. Within a tenth of a second, that change flows through Kafka and lands in the Operational Data Store. Compare that to the previous approach, where the same change waited until 2 AM for the nightly batch job.',
+    speakerNotes: 'Here is what happens when someone in System 05 updates a customer record. Within a tenth of a second, that change flows through Kafka and lands in the Operational Data Store. Compare that to the previous approach, where the same change waited until 2 AM for the nightly batch job.',
     keyTakeaway: 'Sub-second event pipeline: T+0ms DB commit → T+10ms Debezium → T+50ms JDBC Sink → T+100ms ODS analytics.'
   },
   {
@@ -142,7 +143,7 @@ export const SLIDES_DATA: SlideData[] = [
     slug: 'key-capabilities-delivered',
     number: 7,
     title: 'Key Capabilities Delivered',
-    subtitle: 'Eight Verified Operational Building Blocks for HRC Data',
+    subtitle: 'Eight Verified Operational Building Blocks for JHSAM Data',
     category: 'Operations',
     isExecShortDeck: false,
     speakerNotes: 'This is the full capability set. Every checkbox is verified live. The business outcome is: stakeholders get current data, engineers stop firefighting batch jobs, and we have a foundation for event-driven applications.',
@@ -234,7 +235,7 @@ export const SLIDES_DATA: SlideData[] = [
     category: 'Business Value',
     isExecShortDeck: false,
     speakerNotes: 'The benefits are tangible: real-time data instead of yesterday numbers, one pipeline instead of ten custom integrations, and a foundation for event-driven applications we have not imagined yet. The engineering efficiency alone pays back the investment in 12–18 months.',
-    keyTakeaway: '2–3 FTE-equivalent annual savings, complete audit trail for SDAIA compliance, and agile real-time dashboards.'
+    keyTakeaway: '2–3 FTE-equivalent annual savings, complete audit trail for regulatory compliance, and agile real-time dashboards.'
   },
   {
     id: 16,
@@ -323,16 +324,16 @@ export const PHYSICAL_NODES: NodeServer[] = [
 ];
 
 export const CDC_SOURCES: CdcSource[] = [
-  { id: 'src-1', name: 'EPM Aggregation', dbType: 'Oracle', businessDomain: 'Enterprise Performance', connector: 'debezium-oracle-epm', changeVolume: '~120K changes/day', status: 'Ready / Pre-configured', tablesCount: 42 },
-  { id: 'src-2', name: 'EPM SharePoint', dbType: 'SQL Server', businessDomain: 'Document Management', connector: 'debezium-sqlserver-sp', changeVolume: '~65K changes/day', status: 'Ready / Pre-configured', tablesCount: 18 },
-  { id: 'src-3', name: 'Mahfouzat', dbType: 'PostgreSQL', businessDomain: 'Archival & Records', connector: 'debezium-postgres-mahfouzat', changeVolume: '~90K changes/day', status: 'Ready / Pre-configured', tablesCount: 34 },
-  { id: 'src-4', name: 'NRM', dbType: 'Oracle', businessDomain: 'National Registry Matrix', connector: 'debezium-oracle-nrm', changeVolume: '~280K changes/day', status: 'Ready / Pre-configured', tablesCount: 56 },
-  { id: 'src-5', name: 'CVM', dbType: 'SQL Server', businessDomain: 'Customer Value Management', connector: 'debezium-sqlserver-cvm', changeVolume: '~450K changes/day', status: 'Ready / Pre-configured', tablesCount: 82 },
-  { id: 'src-6', name: 'MMS', dbType: 'MySQL', businessDomain: 'Material Management', connector: 'debezium-mysql-mms', changeVolume: '~110K changes/day', status: 'Ready / Pre-configured', tablesCount: 29 },
-  { id: 'src-7', name: 'AZKA (NewFinance)', dbType: 'Oracle EBS', businessDomain: 'Core Financials & GL', connector: 'debezium-oracle-azka-fin', changeVolume: '~340K changes/day', status: 'Ready / Pre-configured', tablesCount: 64 },
-  { id: 'src-8', name: 'AZKA (Stores)', dbType: 'SQL Server', businessDomain: 'Inventory & Procurement', connector: 'debezium-sqlserver-azka-st', changeVolume: '~190K changes/day', status: 'Ready / Pre-configured', tablesCount: 38 },
-  { id: 'src-9', name: 'Moamalat', dbType: 'PostgreSQL', businessDomain: 'Correspondence & Workflow', connector: 'debezium-postgres-moamalat', changeVolume: '~220K changes/day', status: 'Ready / Pre-configured', tablesCount: 47 },
-  { id: 'src-10', name: 'Expert', dbType: 'MySQL', businessDomain: 'Consultancy & Advisory Cases', connector: 'debezium-mysql-expert', changeVolume: '~85K changes/day', status: 'Ready / Pre-configured', tablesCount: 22 }
+  { id: 'src-1', name: 'System 01', genericCode: 'SYS-01', dbType: 'Oracle', businessDomain: 'Core Enterprise Performance', connector: 'debezium-sys01-perf', changeVolume: '~120K changes/day', status: 'Ready / Pre-configured', tablesCount: 42 },
+  { id: 'src-2', name: 'System 02', genericCode: 'SYS-02', dbType: 'SQL Server', businessDomain: 'Document & Content Management', connector: 'debezium-sys02-doc', changeVolume: '~65K changes/day', status: 'Ready / Pre-configured', tablesCount: 18 },
+  { id: 'src-3', name: 'System 03', genericCode: 'SYS-03', dbType: 'PostgreSQL', businessDomain: 'Records & Archival Storage', connector: 'debezium-sys03-archive', changeVolume: '~90K changes/day', status: 'Ready / Pre-configured', tablesCount: 34 },
+  { id: 'src-4', name: 'System 04', genericCode: 'SYS-04', dbType: 'Oracle', businessDomain: 'Master Data & Identity Registry', connector: 'debezium-sys04-registry', changeVolume: '~280K changes/day', status: 'Ready / Pre-configured', tablesCount: 56 },
+  { id: 'src-5', name: 'System 05', genericCode: 'SYS-05', dbType: 'SQL Server', businessDomain: 'Customer & Account Management', connector: 'debezium-sys05-cust', changeVolume: '~450K changes/day', status: 'Ready / Pre-configured', tablesCount: 82 },
+  { id: 'src-6', name: 'System 06', genericCode: 'SYS-06', dbType: 'MySQL', businessDomain: 'Material & Inventory Control', connector: 'debezium-sys06-mat', changeVolume: '~110K changes/day', status: 'Ready / Pre-configured', tablesCount: 29 },
+  { id: 'src-7', name: 'System 07', genericCode: 'SYS-07', dbType: 'Oracle EBS', businessDomain: 'General Ledger & Core Financials', connector: 'debezium-sys07-fin', changeVolume: '~340K changes/day', status: 'Ready / Pre-configured', tablesCount: 64 },
+  { id: 'src-8', name: 'System 08', genericCode: 'SYS-08', dbType: 'SQL Server', businessDomain: 'Warehouse & Procurement', connector: 'debezium-sys08-proc', changeVolume: '~190K changes/day', status: 'Ready / Pre-configured', tablesCount: 38 },
+  { id: 'src-9', name: 'System 09', genericCode: 'SYS-09', dbType: 'PostgreSQL', businessDomain: 'Operations & Workflow Management', connector: 'debezium-sys09-ops', changeVolume: '~220K changes/day', status: 'Ready / Pre-configured', tablesCount: 47 },
+  { id: 'src-10', name: 'System 10', genericCode: 'SYS-10', dbType: 'MySQL', businessDomain: 'Case & Advisory Records', connector: 'debezium-sys10-case', changeVolume: '~85K changes/day', status: 'Ready / Pre-configured', tablesCount: 22 }
 ];
 
 export const HEALTH_CHECKS: HealthCheckItem[] = [
@@ -471,7 +472,7 @@ export const TALKING_POINTS = [
   },
   {
     q: 'How much does it cost?',
-    a: 'The software is free and open-source. The investment is in server capacity (VM expansion) and security hardening — modest relative to the millions in enterprise value.'
+    a: 'The software is free and open-source. The investment is in server capacity (VM expansion) and security hardening — modest relative to the enterprise value.'
   },
   {
     q: 'What could go wrong?',

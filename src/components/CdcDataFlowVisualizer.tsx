@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { CDC_SOURCES, CdcSource } from '../data/kafkaDeckData';
 import { 
   Database, ArrowRight, Play, CheckCircle2, Clock, 
@@ -7,7 +7,7 @@ import {
 
 export const CdcDataFlowVisualizer: React.FC = () => {
   const [sources] = useState<CdcSource[]>(CDC_SOURCES);
-  const [selectedSourceId, setSelectedSourceId] = useState<string>('src-5'); // Default CVM
+  const [selectedSourceId, setSelectedSourceId] = useState<string>('src-5'); // Default System 05
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [filterType, setFilterType] = useState<string>('ALL');
@@ -20,7 +20,7 @@ export const CdcDataFlowVisualizer: React.FC = () => {
     { ms: 15, label: 'Kafka Broker Quorum', role: 'KRaft Cluster', desc: 'Message acknowledged by 3x replicas across APP01/02/03' },
     { ms: 25, label: 'JDBC Sink Consume', role: 'Kafka Connect Sink', desc: 'Sink worker consumes Avro record with Schema Registry validation' },
     { ms: 50, label: 'Written to PROD_ODS', role: 'Operational Data Store', desc: 'ODS tables updated with micro-batch upsert' },
-    { ms: 100, label: 'Analytical Query Ready', role: 'DWH / SDAIA / BI', desc: 'Immediate executive reporting availability (<100ms total latency)' }
+    { ms: 100, label: 'Analytical Query Ready', role: 'DWH / Analytics / BI', desc: 'Immediate executive reporting availability (<100ms total latency)' }
   ];
 
   const runSimulation = () => {
@@ -54,7 +54,7 @@ export const CdcDataFlowVisualizer: React.FC = () => {
         <div>
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-bold text-slate-900 tracking-tight">
-              End-to-End CDC Data Pipeline (10 Sources → PROD_ODS)
+              End-to-End CDC Data Pipeline (10 Systems → PROD_ODS)
             </h2>
             <span className="text-xs font-mono font-bold px-2 py-0.5 bg-blue-100 text-[#1F3A5F] rounded">
               Sub-Second (~100ms)
@@ -81,7 +81,7 @@ export const CdcDataFlowVisualizer: React.FC = () => {
           <div>
             <span className="text-xs font-mono text-cyan-400">ACTIVE PIPELINE SIMULATION</span>
             <h3 className="text-base font-bold text-slate-100 mt-0.5">
-              Tracing Transaction Event: <span className="text-amber-400 font-mono">{selectedSource.name}</span>
+              Tracing Transaction Event: <span className="text-amber-400 font-mono">{selectedSource.name}</span> <span className="text-slate-400 text-xs font-normal">({selectedSource.businessDomain})</span>
             </h3>
           </div>
           <div className="text-xs font-mono text-slate-400">
@@ -131,7 +131,7 @@ export const CdcDataFlowVisualizer: React.FC = () => {
             </div>
           </div>
           <div className="p-3 bg-emerald-950/40 border border-emerald-900/60 rounded-lg">
-            <div className="text-emerald-400 font-bold">HRC Kafka CDC Pipeline</div>
+            <div className="text-emerald-400 font-bold">JHSAM Kafka CDC Pipeline</div>
             <div className="text-slate-300 text-[11px] mt-1">
               Data available in PROD_ODS in ~100 milliseconds. 0 table locks, continuous micro-streaming.
             </div>
@@ -144,7 +144,7 @@ export const CdcDataFlowVisualizer: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
           <div>
             <h3 className="text-base font-bold text-slate-900">
-              10 Source Databases Configured & Ready
+              10 Source Systems Configured & Ready
             </h3>
             <p className="text-xs text-slate-500">
               Select any system to inspect its connector plugin, schema volume, and operational target.
@@ -212,7 +212,7 @@ export const CdcDataFlowVisualizer: React.FC = () => {
               Active Selection: <span className="font-mono text-[#1F3A5F]">{selectedSource.name}</span> ({selectedSource.businessDomain})
             </div>
             <div className="text-slate-600 font-mono text-[11px]">
-              Debezium Connector: <span className="text-slate-800 font-semibold">{selectedSource.connector}</span> · Target: <span className="text-slate-800 font-semibold">PROD_ODS.ODS_{selectedSource.name.toUpperCase().replace(/[^A-Z0-9]/g, '_')}</span>
+              Debezium Connector: <span className="text-slate-800 font-semibold">{selectedSource.connector}</span> · Target: <span className="text-slate-800 font-semibold">PROD_ODS.ODS_{selectedSource.genericCode.replace('-', '_')}</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
