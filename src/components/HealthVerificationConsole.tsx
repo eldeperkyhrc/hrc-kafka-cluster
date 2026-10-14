@@ -68,14 +68,14 @@ export const HealthVerificationConsole: React.FC = () => {
             <div className="flex items-center justify-between border-b border-slate-800 pb-3 text-slate-400">
               <div className="flex items-center gap-2">
                 <Terminal className="w-4 h-4 text-emerald-400" />
-                <span>bash /opt/hrc-kafka/scripts/verify-cluster.sh --all-hosts</span>
+                <span>bash /opt/JHSAM-kafka/scripts/verify-cluster.sh --all-hosts</span>
               </div>
               <span className="text-[11px] text-slate-500">EXIT CODE 0</span>
             </div>
 
             <div className="text-slate-500 py-1">
               ═════════════════════════════════════════════════════════════<br />
-              &nbsp;HRC KAFKA CLUSTER — EXECUTIVE OPERATIONAL VERIFICATION<br />
+              &nbsp;JHSAM KAFKA CLUSTER — EXECUTIVE OPERATIONAL VERIFICATION<br />
               ═════════════════════════════════════════════════════════════
             </div>
 

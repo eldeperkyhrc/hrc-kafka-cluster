@@ -75,11 +75,11 @@ export const SLIDES_DATA: SlideData[] = [
     id: 1,
     slug: 'title',
     number: 1,
-    title: 'HRC Data Management Platform',
+    title: 'JHSAM Data Management Platform',
     subtitle: 'Kafka Cluster Deployment — Executive Briefing',
     category: 'Overview',
     isExecShortDeck: true,
-    speakerNotes: 'Welcome. Today I will walk you through the deployment of the HRC Kafka Cluster — what it is, what is live today, and what we recommend next. This is a 20-minute briefing with 5 minutes for questions.',
+    speakerNotes: 'Welcome. Today I will walk you through the deployment of the JHSAM Kafka Cluster — what it is, what is live today, and what we recommend next. This is a 20-minute briefing with 5 minutes for questions.',
     keyTakeaway: 'The foundational enterprise streaming backbone is live and operational as of October 2026.'
   },
   {
@@ -134,7 +134,7 @@ export const SLIDES_DATA: SlideData[] = [
     subtitle: 'From Database Commit to Analytical Availability in ~100 Milliseconds',
     category: 'Architecture',
     isExecShortDeck: false,
-    speakerNotes: 'Here is what happens when someone in CVM updates a customer record. Within a tenth of a second, that change flows through Kafka and lands in the Operational Data Store. Compare that to the previous approach, where the same change waited until 2 AM for the nightly batch job.',
+    speakerNotes: 'Here is what happens when someone in CRM updates a customer record. Within a tenth of a second, that change flows through Kafka and lands in the Operational Data Store. Compare that to the previous approach, where the same change waited until 2 AM for the nightly batch job.',
     keyTakeaway: 'Sub-second event pipeline: T+0ms DB commit → T+10ms Debezium → T+50ms JDBC Sink → T+100ms ODS analytics.'
   },
   {
@@ -142,7 +142,7 @@ export const SLIDES_DATA: SlideData[] = [
     slug: 'key-capabilities-delivered',
     number: 7,
     title: 'Key Capabilities Delivered',
-    subtitle: 'Eight Verified Operational Building Blocks for HRC Data',
+    subtitle: 'Eight Verified Operational Building Blocks for JHSAM Data',
     category: 'Operations',
     isExecShortDeck: false,
     speakerNotes: 'This is the full capability set. Every checkbox is verified live. The business outcome is: stakeholders get current data, engineers stop firefighting batch jobs, and we have a foundation for event-driven applications.',
@@ -327,7 +327,7 @@ export const CDC_SOURCES: CdcSource[] = [
   { id: 'src-2', name: 'EPM SharePoint', dbType: 'SQL Server', businessDomain: 'Document Management', connector: 'debezium-sqlserver-sp', changeVolume: '~65K changes/day', status: 'Ready / Pre-configured', tablesCount: 18 },
   { id: 'src-3', name: 'Mahfouzat', dbType: 'PostgreSQL', businessDomain: 'Archival & Records', connector: 'debezium-postgres-mahfouzat', changeVolume: '~90K changes/day', status: 'Ready / Pre-configured', tablesCount: 34 },
   { id: 'src-4', name: 'NRM', dbType: 'Oracle', businessDomain: 'National Registry Matrix', connector: 'debezium-oracle-nrm', changeVolume: '~280K changes/day', status: 'Ready / Pre-configured', tablesCount: 56 },
-  { id: 'src-5', name: 'CVM', dbType: 'SQL Server', businessDomain: 'Customer Value Management', connector: 'debezium-sqlserver-cvm', changeVolume: '~450K changes/day', status: 'Ready / Pre-configured', tablesCount: 82 },
+  { id: 'src-5', name: 'CRM', dbType: 'SQL Server', businessDomain: 'Customer Relationship Management', connector: 'debezium-sqlserver-crm', changeVolume: '~450K changes/day', status: 'Ready / Pre-configured', tablesCount: 82 },
   { id: 'src-6', name: 'MMS', dbType: 'MySQL', businessDomain: 'Material Management', connector: 'debezium-mysql-mms', changeVolume: '~110K changes/day', status: 'Ready / Pre-configured', tablesCount: 29 },
   { id: 'src-7', name: 'AZKA (NewFinance)', dbType: 'Oracle EBS', businessDomain: 'Core Financials & GL', connector: 'debezium-oracle-azka-fin', changeVolume: '~340K changes/day', status: 'Ready / Pre-configured', tablesCount: 64 },
   { id: 'src-8', name: 'AZKA (Stores)', dbType: 'SQL Server', businessDomain: 'Inventory & Procurement', connector: 'debezium-sqlserver-azka-st', changeVolume: '~190K changes/day', status: 'Ready / Pre-configured', tablesCount: 38 },

@@ -120,7 +120,7 @@ export const PresentationMode: React.FC<PresentationModeProps> = ({
       <div className="h-14 px-4 sm:px-6 bg-slate-950/90 border-b border-slate-800 flex items-center justify-between gap-4 shrink-0">
         <div className="flex items-center gap-3">
           <div className="w-7 h-7 rounded bg-[#1F3A5F] flex items-center justify-center font-bold text-xs">
-            HRC
+            JHSAM
           </div>
           <span className="text-sm font-bold text-white hidden sm:inline">
             Executive Briefing Deck

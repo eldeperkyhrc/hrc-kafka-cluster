@@ -38,7 +38,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({
           )}
         </div>
         <div className="text-xs font-mono text-slate-400">
-          HRC Data Management Platform · October 2026
+          JHSAM Data Management Platform · October 2026
         </div>
       </div>
 
@@ -148,7 +148,7 @@ const Slide1Content: React.FC<{ onNavigate?: (v: any) => void }> = ({ onNavigate
       <div className="w-full rounded-xl overflow-hidden border border-slate-200 shadow-md bg-slate-900">
         <img 
           src="/src/assets/images/kafka_enterprise_mesh_1792003032458.jpg" 
-          alt="HRC Kafka Cluster Enterprise Mesh" 
+          alt="JHSAM Kafka Cluster Enterprise Mesh" 
           className="w-full h-56 object-cover"
         />
         <div className="p-3 bg-slate-900 text-slate-300 text-xs flex items-center justify-between">
@@ -331,7 +331,7 @@ const Slide4Content: React.FC<{ onNavigate?: (v: any) => void }> = ({ onNavigate
           End-to-End Enterprise Architecture
         </h3>
         <p className="text-xs text-slate-600 leading-relaxed">
-          The HRC Data Platform bridges legacy relational silos and modern analytical stores. 
+          The JHSAM Data Platform bridges legacy relational silos and modern analytical stores. 
           Ten operational databases continuously stream table-level transaction logs through Debezium connectors 
           into redundant KRaft Kafka brokers, which sink data into the unified <span className="font-mono font-semibold text-slate-800">PROD_ODS</span> repository.
         </p>
@@ -604,7 +604,7 @@ const Slide8Content: React.FC<{ onNavigate?: (v: any) => void }> = ({ onNavigate
       {/* Terminal View */}
       <div className="md:col-span-7 bg-slate-950 text-slate-200 font-mono text-xs rounded-xl p-4 shadow-md border border-slate-800 space-y-1.5">
         <div className="text-slate-400 pb-2 border-b border-slate-800 flex justify-between">
-          <span>HRC Kafka Cluster — Verification CLI</span>
+          <span>JHSAM Kafka Cluster — Verification CLI</span>
           <span className="text-emerald-400">verify-cluster.sh</span>
         </div>
         <div className="text-slate-300 pt-1">[1] Containers on host: 5/5 <span className="text-emerald-400 font-bold">✓ PASS</span></div>

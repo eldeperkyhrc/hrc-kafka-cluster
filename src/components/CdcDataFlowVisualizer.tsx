@@ -7,7 +7,7 @@ import {
 
 export const CdcDataFlowVisualizer: React.FC = () => {
   const [sources] = useState<CdcSource[]>(CDC_SOURCES);
-  const [selectedSourceId, setSelectedSourceId] = useState<string>('src-5'); // Default CVM
+  const [selectedSourceId, setSelectedSourceId] = useState<string>('src-5'); // Default CRM
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [filterType, setFilterType] = useState<string>('ALL');
@@ -131,7 +131,7 @@ export const CdcDataFlowVisualizer: React.FC = () => {
             </div>
           </div>
           <div className="p-3 bg-emerald-950/40 border border-emerald-900/60 rounded-lg">
-            <div className="text-emerald-400 font-bold">HRC Kafka CDC Pipeline</div>
+            <div className="text-emerald-400 font-bold">JHSAM Kafka CDC Pipeline</div>
             <div className="text-slate-300 text-[11px] mt-1">
               Data available in PROD_ODS in ~100 milliseconds. 0 table locks, continuous micro-streaming.
             </div>

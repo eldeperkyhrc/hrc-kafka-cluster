@@ -22,13 +22,13 @@ export const TopBar: React.FC<TopBarProps> = ({
         {/* Zone 1: Single text element wordmark */}
         <div className="flex items-center gap-3 shrink-0">
           <div className="w-8 h-8 rounded-lg bg-[#1F3A5F] flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-xs">
-            HRC
+            JHSAM
           </div>
           <button
             onClick={() => onSelectView('deck')}
             className="text-base sm:text-lg font-bold tracking-tight text-slate-900 whitespace-nowrap hover:text-[#1F3A5F] transition-colors text-left"
           >
-            HRC Kafka Platform
+            JHSAM Kafka Platform
           </button>
         </div>
 
